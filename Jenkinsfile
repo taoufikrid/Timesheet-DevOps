@@ -36,5 +36,11 @@ pipeline {
                 sh "docker push ${IMAGE_NAME}:latest"
             }
         }
+        stage('Docker Compose Up') {
+            steps {
+                sh 'docker compose down || true'
+                sh 'docker compose up -d'
+            }
+        }
     }
 }
