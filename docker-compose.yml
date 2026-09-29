@@ -1,9 +1,6 @@
-version: '3.8'
-
 services:
   mysqldb:
     image: mysql:8.0
-    container_name: timesheet-mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: rootpass
@@ -22,7 +19,6 @@ services:
 
   backend:
     image: taoufikkrid/timesheet-devops:latest
-    container_name: timesheet-backend
     restart: always
     depends_on:
       mysqldb:
